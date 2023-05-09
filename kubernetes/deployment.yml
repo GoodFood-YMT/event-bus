@@ -8,22 +8,22 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: event-bus
+      app: event-bus
   template:
     metadata:
       labels:
-        io.kompose.service: event-bus
+        app: event-bus
     spec:
       containers:
-        envFrom:
-          - configMapRef:
-              name: event-bus-config
-          - secretRef:
-              name: event-bus-secret
-        image: rabbitmq:3.8.25-management-alpine
-        name: event-bus
-        ports:
-          - containerPort: 15672
-          - containerPort: 5672
-        resources: {}
+        - envFrom:
+            - configMapRef:
+                name: event-bus-config
+            - secretRef:
+                name: event-bus-secret
+          image: rabbitmq:3.8.25-management-alpine
+          name: event-bus
+          ports:
+            - containerPort: 15672
+            - containerPort: 5672
+          resources: {}
       restartPolicy: Always
