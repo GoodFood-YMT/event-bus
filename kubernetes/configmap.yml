@@ -4,4 +4,4 @@ metadata:
   name: event-bus-config
   labels:
     app: event-bus
-data:
+data: {}
