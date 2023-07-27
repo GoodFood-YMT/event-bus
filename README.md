@@ -5,4 +5,4 @@
 ## Setup
 
 Run this command at the repository root  
-`kubectl apply -k ./kubernetes/overlays/dev`
+`kubectl apply ./kubernetes`
